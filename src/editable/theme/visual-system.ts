@@ -1,149 +1,97 @@
 import { slot4BrandConfig } from './brand.config'
 
 export type Slot4VisualPreset =
-  | 'editorial-paper'
-  | 'luxury-atelier'
-  | 'brutalist-index'
-  | 'organic-journal'
-  | 'tech-directory'
-  | 'retro-bulletin'
-  | 'visual-gallery'
+  | 'luxury-directory'
+  | 'editorial-classified'
+  | 'clean-magazine'
+  | 'dark-premium'
 
 export const visualPresets = {
-  'editorial-paper': {
-    label: 'Editorial Paper',
-    mood: 'calm magazine authority',
-    fontDirection: 'serif headlines with quiet sans body',
+  'luxury-directory': {
+    label: 'Purple Newsstand',
+    mood: 'clean headline grid for classifieds and discovery',
+    fontDirection: 'bold geometric sans for headlines and compact metadata',
     colors: {
-      background: '#f7efe3',
-      foreground: '#201711',
-      muted: '#7b6253',
-      primary: '#261811',
-      accent: '#b76e45',
-      surface: '#fffaf2',
-    },
-    shape: 'soft editorial cards with fine borders',
-  },
-  'luxury-atelier': {
-    label: 'Luxury Atelier',
-    mood: 'premium, restrained, polished',
-    fontDirection: 'high-contrast display headings with spacious tracking',
-    colors: {
-      background: '#0f1110',
-      foreground: '#f6ead8',
-      muted: '#b8aa94',
-      primary: '#d7b56d',
-      accent: '#7f1d1d',
-      surface: '#181a17',
-    },
-    shape: 'large dark panels, gold hairlines, generous negative space',
-  },
-  'brutalist-index': {
-    label: 'Brutalist Index',
-    mood: 'bold, raw, memorable',
-    fontDirection: 'condensed headings, mono labels, hard rhythm',
-    colors: {
-      background: '#f2f0e8',
-      foreground: '#111111',
-      muted: '#55524a',
-      primary: '#111111',
-      accent: '#ff4d00',
+      background: '#ffffff',
+      foreground: '#160022',
+      muted: '#5c4a68',
+      primary: '#340055',
+      accent: '#7825c7',
       surface: '#ffffff',
     },
-    shape: 'sharp edges, thick borders, offset blocks',
+    shape: 'flat cards, thick purple rules, wide editorial spacing',
   },
-  'organic-journal': {
-    label: 'Organic Journal',
-    mood: 'warm, natural, trustworthy',
-    fontDirection: 'rounded serif or humanist sans with soft captions',
+  'editorial-classified': {
+    label: 'Editorial Classified',
+    mood: 'newsroom clarity with listing speed',
+    fontDirection: 'modern serif heads and clean sans body',
     colors: {
-      background: '#f4efe5',
-      foreground: '#263021',
-      muted: '#68705a',
-      primary: '#415b32',
-      accent: '#c47c51',
-      surface: '#fffaf0',
-    },
-    shape: 'rounded cards, natural spacing, calm texture',
-  },
-  'tech-directory': {
-    label: 'Tech Directory',
-    mood: 'clean, fast, useful',
-    fontDirection: 'modern sans with crisp mono data accents',
-    colors: {
-      background: '#f6f9fc',
-      foreground: '#101827',
-      muted: '#5f6b7a',
-      primary: '#0f172a',
-      accent: '#00a6ff',
+      background: '#ffffff',
+      foreground: '#160022',
+      muted: '#5c4a68',
+      primary: '#340055',
+      accent: '#7825c7',
       surface: '#ffffff',
     },
-    shape: 'clean grids, pill filters, sharp information hierarchy',
+    shape: 'framed sections with soft rails',
   },
-  'retro-bulletin': {
-    label: 'Retro Bulletin',
-    mood: 'playful, local, energetic',
-    fontDirection: 'chunky headings with friendly body type',
+  'clean-magazine': {
+    label: 'Clean Magazine',
+    mood: 'airy discovery with high contrast calls to action',
+    fontDirection: 'wide display headers and readable system sans',
     colors: {
-      background: '#fff3c4',
-      foreground: '#2b1d12',
-      muted: '#7b5736',
-      primary: '#2b1d12',
-      accent: '#e85d2a',
-      surface: '#fff8da',
+      background: '#ffffff',
+      foreground: '#160022',
+      muted: '#5c4a68',
+      primary: '#340055',
+      accent: '#7825c7',
+      surface: '#ffffff',
     },
-    shape: 'stickers, tabs, framed modules, playful dividers',
+    shape: 'modular layout blocks and image-first grids',
   },
-  'visual-gallery': {
-    label: 'Visual Gallery',
-    mood: 'cinematic, image-led, immersive',
-    fontDirection: 'minimal sans with oversized display moments',
+  'dark-premium': {
+    label: 'Dark Premium',
+    mood: 'high-end catalog with bold neon accents',
+    fontDirection: 'condensed headline + mono metadata',
     colors: {
-      background: '#07101f',
-      foreground: '#f8fbff',
-      muted: '#a9b6c8',
-      primary: '#8df0c8',
-      accent: '#f2a0ff',
-      surface: '#101b2d',
+      background: '#120b1f',
+      foreground: '#f7f1ff',
+      muted: '#b9a4d1',
+      primary: '#792ca2',
+      accent: '#e05454',
+      surface: '#201431',
     },
-    shape: 'dark cards, large media, glass overlays',
+    shape: 'glassmorphism and cinematic cards',
   },
 } as const
 
 export const visualSystem = {
   productKind: slot4BrandConfig.productKind,
-  recommendedPreset:
-    slot4BrandConfig.productKind === 'visual'
-      ? 'visual-gallery'
-      : slot4BrandConfig.productKind === 'editorial'
-        ? 'editorial-paper'
-        : slot4BrandConfig.productKind === 'directory'
-          ? 'tech-directory'
-          : 'organic-journal',
+  recommendedPreset: 'luxury-directory',
   radius: {
     sm: '0.75rem',
     md: '1.25rem',
-    lg: '2rem',
-    xl: '2.75rem',
+    lg: '1.75rem',
+    xl: '2.5rem',
   },
   motion: {
-    pageLoad: 'animate-in fade-in slide-in-from-bottom-4 duration-700',
-    cardHover: 'transition duration-300 hover:-translate-y-1 hover:shadow-xl',
-    softHover: 'transition duration-300 hover:opacity-85',
+    pageLoad: 'animate-in fade-in duration-500',
+    cardHover: 'transition duration-300 hover:-translate-y-1 hover:shadow-2xl',
+    softHover: 'transition duration-300 hover:opacity-90',
     reduceMotionSafe: 'motion-reduce:transform-none motion-reduce:transition-none',
   },
   typography: {
-    eyebrow: 'text-xs font-semibold uppercase tracking-[0.24em]',
-    heroTitle: 'text-5xl font-semibold tracking-[-0.06em] sm:text-6xl lg:text-7xl',
-    sectionTitle: 'text-3xl font-semibold tracking-[-0.04em] sm:text-4xl',
+    eyebrow: 'text-xs font-bold uppercase tracking-[0.2em]',
+    heroTitle: 'text-5xl font-black tracking-[-0.05em] sm:text-6xl lg:text-7xl',
+    sectionTitle: 'text-3xl font-black tracking-[-0.04em] sm:text-4xl',
     body: 'text-base leading-8',
-    caption: 'text-xs font-medium uppercase tracking-[0.18em]',
+    caption: 'text-xs font-semibold uppercase tracking-[0.16em]',
   },
   surfaces: {
     glass: 'border border-white/15 bg-white/10 backdrop-blur-xl',
-    paper: 'border border-black/10 bg-white shadow-[0_24px_70px_rgba(15,23,42,0.08)]',
-    quiet: 'border border-black/10 bg-black/[0.03]',
-    dark: 'border border-white/10 bg-black/30 shadow-[0_24px_70px_rgba(0,0,0,0.25)]',
+    paper: 'border border-black/10 bg-white shadow-[0_18px_54px_rgba(59,35,92,0.12)]',
+    quiet: 'border border-black/8 bg-black/[0.03]',
+    dark: 'border border-white/10 bg-black/30 shadow-[0_24px_70px_rgba(0,0,0,0.28)]',
   },
   layout: {
     page: 'mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8',
@@ -155,3 +103,5 @@ export const visualSystem = {
 export function getVisualPreset(name: Slot4VisualPreset = visualSystem.recommendedPreset as Slot4VisualPreset) {
   return visualPresets[name]
 }
+
+// redesigned-ui-2026-05-28

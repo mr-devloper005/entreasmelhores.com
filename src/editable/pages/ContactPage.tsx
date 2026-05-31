@@ -1,12 +1,11 @@
 'use client'
 
 import { Building2, FileText, Image as ImageIcon, Mail, MapPin, Phone, Sparkles, Bookmark } from 'lucide-react'
-import { NavbarShell } from '@/components/shared/navbar-shell'
-import { Footer } from '@/components/shared/footer'
 import { pagesContent } from '@/editable/content/pages.content'
 import { getFactoryState } from '@/design/factory/get-factory-state'
 import { getProductKind } from '@/design/factory/get-product-kind'
-import { ContactLeadForm } from "@/components/shared/contact-lead-form";
+import { EditableContactLeadForm } from '@/editable/components/EditableContactLeadForm'
+import { EditableSiteShell } from '@/editable/shell/EditableSiteShell'
 
 function getTone(kind: ReturnType<typeof getProductKind>) {
   if (kind === 'directory') {
@@ -76,14 +75,14 @@ export default function ContactPage() {
             ]
 
   return (
-    <div className={`min-h-screen ${tone.shell}`}>
-      <NavbarShell />
+    <EditableSiteShell className={tone.shell}>
       <main className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <section className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] opacity-70">{pagesContent.contact.eyebrow}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#6f2dbd]">{pagesContent.contact.eyebrow}</p>
             <h1 className="mt-4 text-5xl font-semibold tracking-[-0.05em]">{pagesContent.contact.title}</h1>
             <p className={`mt-5 max-w-2xl text-sm leading-8 ${tone.muted}`}>{pagesContent.contact.description}</p>
+            <div className="mt-7 h-2 w-full max-w-2xl bg-[linear-gradient(90deg,#443199,#792ca2,#c13383)]" />
             <div className="mt-8 space-y-4">
               {lanes.map((lane) => (
                 <div key={lane.title} className={`rounded-[1.6rem] p-5 ${tone.soft}`}>
@@ -97,11 +96,13 @@ export default function ContactPage() {
 
           <div className={`rounded-[2rem] p-7 ${tone.panel}`}>
             <h2 className="text-2xl font-semibold">{pagesContent.contact.formTitle}</h2>
-            <ContactLeadForm />
+            <p className={`mt-2 text-sm ${tone.muted}`}>We usually respond with the next steps and relevant guidance after reviewing your request details.</p>
+            <EditableContactLeadForm />
           </div>
         </section>
       </main>
-      <Footer />
-    </div>
+    </EditableSiteShell>
   )
 }
+
+// redesigned-ui-2026-05-28
