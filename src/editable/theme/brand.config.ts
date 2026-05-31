@@ -8,8 +8,10 @@ const productKind = getProductKind(recipe)
 export const slot4BrandConfig = {
   siteName: siteIdentity.name,
   tagline: siteIdentity.tagline,
+  description: siteIdentity.description,
   domain: siteIdentity.domain,
   baseUrl: siteIdentity.url,
+  logo: (siteIdentity as { logo?: string }).logo ?? '/logo.png',
   productKind,
   ogImage: siteIdentity.ogImage,
   accents:
@@ -21,3 +23,5 @@ export const slot4BrandConfig = {
           ? { primary: '#0f172a', surface: '#f8fbff' }
           : { primary: '#5b2b3b', surface: '#f7f1ea' },
 } as const
+
+// redesigned-ui-2026-05-28

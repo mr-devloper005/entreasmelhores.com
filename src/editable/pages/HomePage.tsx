@@ -4,19 +4,19 @@ import { SITE_CONFIG, type TaskKey } from '@/lib/site-config'
 import { buildPageMetadata } from '@/lib/seo'
 import { fetchHomeTaskFeed, fetchHomeTimeSections, type HomeTimeSection } from '@/lib/task-data'
 import { pagesContent } from '@/editable/content/pages.content'
-import { editableDesignContract as dc } from '@/editable/layouts/design-contract'
 import type { SitePost } from '@/lib/site-connector'
 import { EditableHomeCta, EditableHomeHero, EditableMagazineSplit, EditableStoryRail, EditableTimeCollections } from '@/editable/sections/HomeSections'
+import { EditableSiteShell } from '@/editable/shell/EditableSiteShell'
 
 export const revalidate = 300
 
 export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     path: '/',
-    title: pagesContent.home.metadata.title,
-    description: pagesContent.home.metadata.description,
-    openGraphTitle: pagesContent.home.metadata.openGraphTitle,
-    openGraphDescription: pagesContent.home.metadata.openGraphDescription,
+    title: SITE_CONFIG.seo.title,
+    description: SITE_CONFIG.seo.description,
+    openGraphTitle: SITE_CONFIG.seo.title,
+    openGraphDescription: SITE_CONFIG.seo.description,
     image: SITE_CONFIG.defaultOgImage,
     keywords: [...pagesContent.home.metadata.keywords],
   })
@@ -37,7 +37,8 @@ export default async function HomePage() {
   const baseUrl = SITE_CONFIG.baseUrl.replace(/\/$/, '')
 
   return (
-    <main className={dc.shell.page}>
+    <EditableSiteShell>
+      <main>
       <SchemaJsonLd
         data={{
           '@context': 'https://schema.org',
@@ -56,6 +57,9 @@ export default async function HomePage() {
       <EditableMagazineSplit primaryTask={primaryTask} primaryRoute={primaryRoute} posts={primaryPosts} timeSections={timeSections} />
       <EditableTimeCollections primaryTask={primaryTask} primaryRoute={primaryRoute} posts={primaryPosts} timeSections={timeSections} />
       <EditableHomeCta />
-    </main>
+      </main>
+    </EditableSiteShell>
   )
 }
+
+// redesigned-ui-2026-05-28
