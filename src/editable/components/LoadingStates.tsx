@@ -57,3 +57,5 @@ export function DetailLoadingState({ label = 'Loading detail', className }: Load
     </div>
   )
 }
+
+// redesigned-ui-2026
