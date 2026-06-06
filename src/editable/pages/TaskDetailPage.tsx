@@ -63,6 +63,29 @@ const escapeHtml = (value: string) => value
 
 const safeUrl = (value: string) => /^https?:\/\//i.test(value) ? value : '#'
 
+const htmlEntities: Record<string, string> = {
+  amp: '&',
+  apos: "'",
+  gt: '>',
+  lt: '<',
+  nbsp: ' ',
+  quot: '"',
+}
+
+const decodeHtmlEntities = (value: string) => {
+  let decoded = value
+  for (let pass = 0; pass < 2; pass += 1) {
+    const next = decoded.replace(/&(#x[\da-f]+|#\d+|amp|apos|gt|lt|nbsp|quot);/gi, (entity, code: string) => {
+      if (code[0] !== '#') return htmlEntities[code.toLowerCase()] || entity
+      const numeric = code[1].toLowerCase() === 'x' ? Number.parseInt(code.slice(2), 16) : Number.parseInt(code.slice(1), 10)
+      return Number.isFinite(numeric) && numeric > 0 && numeric <= 0x10ffff ? String.fromCodePoint(numeric) : entity
+    })
+    if (next === decoded) break
+    decoded = next
+  }
+  return decoded
+}
+
 const linkifyMarkdown = (value: string) => value
   .replace(/\[([^\]]+)]\((https?:\/\/[^\s)]+)\)/gi, (_match, label, url) => `<a href="${safeUrl(url)}" target="_blank" rel="nofollow noopener noreferrer">${label}</a>`)
 
@@ -84,7 +107,7 @@ const sanitizeHtml = (html: string) => hardenLinks(html
   .replace(/(href|src)=(['"])javascript:[\s\S]*?\2/gi, '$1="#"'))
 
 const formatPlainText = (raw: string) => {
-  const value = raw.trim()
+  const value = decodeHtmlEntities(raw).trim()
   if (!value) return ''
   if (/<[a-z][\s\S]*>/i.test(value)) return sanitizeHtml(linkifyMarkdown(value))
   return value
