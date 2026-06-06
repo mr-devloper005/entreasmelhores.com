@@ -114,4 +114,314 @@ h3,
   }
 }
 
+/* Restyle legacy auth routes without changing files outside src/editable. */
+body:has(main form input[type="password"]) {
+  background: #ffffff !important;
+  color: var(--slot4-page-text) !important;
+}
+
+body:has(main form input[type="password"]) > div {
+  background: #ffffff !important;
+  color: var(--slot4-page-text) !important;
+}
+
+body:has(main form input[type="password"]) header {
+  background: rgb(255 255 255 / 92%) !important;
+  border-color: rgb(120 37 199 / 20%) !important;
+  box-shadow: none !important;
+  color: var(--slot4-page-text) !important;
+  min-height: 89px;
+}
+
+body:has(main form input[type="password"]) header > nav {
+  height: 88px !important;
+  max-width: 1440px !important;
+}
+
+body:has(main form input[type="password"]) header a[href="/"] > span {
+  border-color: rgb(120 37 199 / 20%) !important;
+  border-radius: 1.4rem !important;
+  height: 56px !important;
+  justify-content: center;
+  padding: 0 !important;
+  width: 56px;
+}
+
+body:has(main form input[type="password"]) header a[href="/"] > span img {
+  height: 44px !important;
+  width: 44px !important;
+}
+
+body:has(main form input[type="password"]) header a[href="/"]::after {
+  content: "Entreasmelhores";
+  font-size: 0.875rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+body:has(main form input[type="password"]) header form {
+  display: flex !important;
+}
+
+body:has(main form input[type="password"]) header form label {
+  max-width: 36rem !important;
+}
+
+body:has(main form input[type="password"]) header form input {
+  background: #ffffff !important;
+  border-color: rgb(120 37 199 / 20%) !important;
+  color: var(--slot4-page-text) !important;
+  height: 48px !important;
+}
+
+body:has(main form input[type="password"]) header a[href="/login"] {
+  color: var(--slot4-page-text) !important;
+  font-weight: 900 !important;
+}
+
+body:has(main form input[type="password"]) header a[href="/signup"] {
+  background: var(--slot4-page-text) !important;
+  color: #ffffff !important;
+  font-weight: 900 !important;
+}
+
+body:has(main form input[type="password"]) header nav > div:last-child::before {
+  color: var(--slot4-page-text);
+  content: "Classified";
+  display: inline-flex;
+  font-size: 0.875rem;
+  font-weight: 900;
+  padding: 0.5rem 1rem;
+}
+
+body:has(main form input[type="password"]) main {
+  background: #ffffff !important;
+  border-top: 1px solid #7825c7;
+  color: var(--slot4-page-text) !important;
+  display: grid;
+  gap: 5rem;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  margin: 6rem auto;
+  max-width: 1376px !important;
+  min-height: auto !important;
+  padding: 2rem 0 6rem !important;
+  width: calc(100% - 4rem);
+}
+
+body:has(main form input[type="password"]) main > section {
+  align-self: start;
+  min-width: 0;
+}
+
+body:has(main form input[type="password"]) main > section:not(:has(form)) {
+  order: 1;
+  padding-top: 2rem;
+}
+
+body:has(main form input[type="password"]) main > section:has(form) {
+  background: #ffffff !important;
+  border: 1px solid #7825c7 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: var(--slot4-page-text) !important;
+  order: 2;
+  padding: 2.5rem !important;
+}
+
+body:has(main form input[type="password"]) main > section:not(:has(form)) > p:first-child {
+  align-items: center;
+  color: var(--slot4-page-text) !important;
+  display: inline-flex;
+  font-size: 0.86rem;
+  font-weight: 900;
+  gap: 7px;
+  letter-spacing: 0 !important;
+  text-transform: none;
+}
+
+body:has(main form input[type="password"]) main > section:not(:has(form)) > p:first-child::before {
+  background: #7825c7;
+  content: "";
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+}
+
+body:has(main form input[type="password"]) main > section:not(:has(form)) h1,
+body:has(main form input[type="password"]) main > section:not(:has(form)) h2 {
+  color: var(--slot4-page-text) !important;
+  font-size: clamp(2.5rem, 5vw, 3.75rem) !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.04em !important;
+  line-height: 1.02;
+  margin-top: 1.5rem;
+  max-width: 42rem;
+}
+
+body:has(main form input[type="password"]) main > section:not(:has(form)) > p:last-child {
+  color: var(--slot4-muted-text) !important;
+  font-size: 1rem;
+  line-height: 2;
+  margin-top: 1.5rem;
+  max-width: 38rem;
+}
+
+body:has(main form input[type="password"]) main > section:has(form) h1,
+body:has(main form input[type="password"]) main > section:has(form) h2 {
+  color: var(--slot4-page-text) !important;
+  font-size: 1.875rem !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.03em !important;
+}
+
+body:has(main form input[type="password"]) main form input {
+  background: #ffffff !important;
+  border: 1px solid #c9a9e5 !important;
+  border-radius: 0 !important;
+  color: var(--slot4-page-text) !important;
+  height: 3rem;
+}
+
+body:has(main form input[type="password"]) main form input::placeholder {
+  color: var(--slot4-soft-muted-text) !important;
+}
+
+body:has(main form input[type="password"]) main form input:focus {
+  border-color: #7825c7 !important;
+  box-shadow: 0 0 0 2px rgb(120 37 199 / 15%) !important;
+}
+
+body:has(main form input[type="password"]) main form button {
+  background: #7825c7 !important;
+  border-radius: 0 !important;
+  color: #ffffff !important;
+  font-weight: 900;
+  height: 3rem;
+}
+
+body:has(main form input[type="password"]) main form button:hover {
+  background: #340055 !important;
+}
+
+body:has(main form input[type="password"]) main > section:has(form) > p:last-child {
+  border-top: 1px solid #e7d8f5;
+  color: var(--slot4-muted-text) !important;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+}
+
+body:has(main form input[type="password"]) main > section:has(form) > p:last-child a {
+  color: #7825c7 !important;
+  font-weight: 900;
+}
+
+body:has(main form input[type="password"]) footer {
+  background: #ffffff !important;
+  border-top: 1px solid rgb(120 37 199 / 20%);
+  color: var(--slot4-page-text) !important;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  margin-top: auto;
+  min-height: 302px;
+  padding: 3rem max(1rem, calc((100% - 1376px) / 2)) 1.25rem !important;
+  text-align: left !important;
+}
+
+body:has(main form input[type="password"]) footer::before {
+  content: "Entreasmelhores\A\A A listing-first business discovery platform for browsing services, businesses, spaces, and location-based opportunities through a cleaner browsing experience.";
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.75;
+  max-width: 28rem;
+  white-space: pre-line;
+}
+
+body:has(main form input[type="password"]) footer::after {
+  content: "EXPLORE\A\A Classified";
+  font-size: 0.875rem;
+  font-weight: 700;
+  grid-column: 2;
+  grid-row: 1;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+body:has(main form input[type="password"]) footer nav {
+  align-self: start;
+  grid-column: 3;
+  grid-row: 1;
+}
+
+body:has(main form input[type="password"]) footer nav::before {
+  content: "Site";
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  margin-bottom: 1rem;
+  opacity: 0.55;
+  text-transform: uppercase;
+}
+
+body:has(main form input[type="password"]) footer ul {
+  align-items: start !important;
+  display: grid !important;
+  gap: 0.5rem !important;
+  justify-content: start !important;
+  margin: 0 !important;
+}
+
+body:has(main form input[type="password"]) footer a {
+  color: var(--slot4-page-text) !important;
+  font-weight: 700;
+}
+
+body:has(main form input[type="password"]) footer > p {
+  border-top: 1px solid rgb(120 37 199 / 20%);
+  color: var(--slot4-page-text) !important;
+  grid-column: 1 / -1;
+  margin: 0 !important;
+  opacity: 0.55;
+  padding-top: 1.25rem;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  body:has(main form input[type="password"]) main {
+    gap: 3rem;
+    grid-template-columns: 1fr;
+    margin: 4rem auto;
+    padding-bottom: 4rem !important;
+    width: calc(100% - 2rem);
+  }
+
+  body:has(main form input[type="password"]) main > section:not(:has(form)) {
+    padding-top: 1rem;
+  }
+
+  body:has(main form input[type="password"]) footer {
+    grid-template-columns: 1fr;
+  }
+
+  body:has(main form input[type="password"]) footer::after,
+  body:has(main form input[type="password"]) footer nav {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  body:has(main form input[type="password"]) header a[href="/"]::after,
+  body:has(main form input[type="password"]) header form,
+  body:has(main form input[type="password"]) header nav > div:last-child::before {
+    display: none !important;
+  }
+}
+
+/* Legacy directory details print encoded HTML as text; hide only that raw line. */
+main > section.grid > div:first-child > div.mt-8 > h2 + p {
+  display: none;
+}
+
 /* redesigned-ui-2026-05-28 */

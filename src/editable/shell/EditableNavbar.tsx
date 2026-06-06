@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, Search, UserPlus, LogIn, X, PlusCircle } from 'lucide-react'
 import { SITE_CONFIG } from '@/lib/site-config'
-import { globalContent } from '@/editable/content/global.content'
 import { getVisualPreset, visualSystem } from '@/editable/theme/visual-system'
 import { useEditableLocalAuthSession } from '@/editable/components/EditableLocalAuthForms'
 
@@ -29,7 +28,6 @@ export function EditableNavbar() {
           </span>
           <span className="hidden min-w-0 sm:block">
             <span className="block max-w-[180px] truncate text-sm font-black tracking-[-0.03em]">{SITE_CONFIG.name}</span>
-            <span className="block max-w-[180px] truncate text-[11px] font-bold uppercase tracking-[0.18em] opacity-55">{globalContent.nav?.tagline || SITE_CONFIG.tagline}</span>
           </span>
         </Link>
 

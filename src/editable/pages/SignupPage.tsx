@@ -12,17 +12,33 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function SignupPage() {
   return (
     <EditableSiteShell>
-      <main className="bg-[var(--editable-page-text,#2f1d16)] text-[var(--editable-page-bg,#fff4e4)]">
-        <section className="mx-auto grid min-h-[calc(100vh-12rem)] max-w-[var(--editable-container)] items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[0.9fr_1fr] lg:px-8">
-          <div className="rounded-[2rem] border border-white/10 bg-white/[0.08] p-6 shadow-[0_24px_70px_rgba(0,0,0,0.22)] backdrop-blur sm:p-8">
-            <h1 className="text-3xl font-black tracking-[-0.05em]">{pagesContent.auth.signup.formTitle}</h1>
-            <EditableLocalSignupForm />
-            <p className="mt-5 text-sm text-white/65">Already have an account? <Link href="/login" className="font-black text-white underline-offset-4 hover:underline">{pagesContent.auth.signup.loginCta}</Link></p>
-          </div>
-          <div>
-            <p className="text-xs font-black uppercase tracking-[0.28em] text-white/60">{pagesContent.auth.signup.badge}</p>
-            <h2 className="mt-5 max-w-xl text-5xl font-black leading-[0.98] tracking-[-0.07em] sm:text-6xl">{pagesContent.auth.signup.title}</h2>
-            <p className="mt-6 max-w-lg text-sm leading-8 text-white/68">{pagesContent.auth.signup.description}</p>
+      <main className="bg-white text-[var(--slot4-page-text)]">
+        <section className="mx-auto min-h-[calc(100vh-12rem)] max-w-[1440px] px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+          <div className="border-t border-[#7825c7] pt-8">
+            <div className="grid items-start gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:gap-20">
+              <div className="lg:pt-8">
+                <p className="editable-kicker">{pagesContent.auth.signup.badge}</p>
+                <h1 className="mt-6 max-w-2xl text-4xl font-black leading-[1.02] tracking-[-0.04em] sm:text-5xl lg:text-6xl">
+                  {pagesContent.auth.signup.title}
+                </h1>
+                <p className="mt-6 max-w-xl text-base leading-8 text-[var(--slot4-muted-text)]">
+                  {pagesContent.auth.signup.description}
+                </p>
+                <div className="mt-10 h-3 w-28 bg-[#7825c7]" />
+              </div>
+
+              <div className="border border-[#7825c7] bg-white p-6 sm:p-8 lg:p-10">
+                <p className="text-sm font-black text-[#7825c7]">New membership</p>
+                <h2 className="mt-3 text-3xl font-black tracking-[-0.03em]">{pagesContent.auth.signup.formTitle}</h2>
+                <EditableLocalSignupForm />
+                <p className="mt-6 border-t border-[#e7d8f5] pt-5 text-sm text-[var(--slot4-muted-text)]">
+                  Already have an account?{' '}
+                  <Link href="/login" className="font-black text-[#7825c7] underline-offset-4 hover:underline">
+                    {pagesContent.auth.signup.loginCta}
+                  </Link>
+                </p>
+              </div>
+            </div>
           </div>
         </section>
       </main>
