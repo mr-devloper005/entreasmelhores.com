@@ -214,6 +214,8 @@ function ListingDetail({ post, related }: { post: SitePost; related: SitePost[] 
 
 function ClassifiedDetail({ post, related }: { post: SitePost; related: SitePost[] }) {
   const images = getImages(post)
+  const heroImage = images[0]
+  const galleryImages = images.slice(1)
   const price = getField(post, ['price', 'amount', 'budget'])
   const location = getField(post, ['location', 'address', 'city'])
   const condition = getField(post, ['condition', 'availability', 'type'])
@@ -221,27 +223,53 @@ function ClassifiedDetail({ post, related }: { post: SitePost; related: SitePost
   const email = getField(post, ['email'])
   const website = getField(post, ['website', 'url'])
   return (
-    <section className="mx-auto grid max-w-[var(--editable-container)] gap-7 px-4 py-10 sm:px-6 lg:grid-cols-[0.82fr_1.18fr] lg:px-8 lg:py-16">
-      <aside className="rounded-[2.5rem] border border-[var(--editable-border)] bg-[var(--detail-text)] p-7 text-[var(--detail-bg)] shadow-xl lg:sticky lg:top-24 lg:self-start">
-        <BackLink task="classified" />
-        <p className="mt-10 text-xs font-black uppercase tracking-[0.28em] opacity-60">Classified notice</p>
-        <h1 className="mt-4 text-4xl font-black leading-[0.98] tracking-[-0.07em] sm:text-5xl">{post.title}</h1>
-        <div className="mt-8 grid gap-3">
-          {price ? <BadgeLine label="Price" value={price} /> : null}
-          {condition ? <BadgeLine label="Condition" value={condition} /> : null}
-          {location ? <BadgeLine label="Location" value={location} /> : null}
-        </div>
-        <div className="mt-8 flex flex-wrap gap-3">
-          {phone ? <a href={`tel:${phone}`} className="rounded-full bg-[var(--detail-bg)] px-5 py-3 text-sm font-black text-[var(--detail-text)]">Call now</a> : null}
-          {email ? <a href={`mailto:${email}`} className="rounded-full border border-white/25 px-5 py-3 text-sm font-black">Email</a> : null}
-        </div>
-      </aside>
-      <article className="rounded-[2.7rem] border border-[var(--editable-border)] bg-white p-6 shadow-[0_30px_90px_rgba(15,23,42,0.08)] sm:p-9">
-        <ImageStrip images={images} label="Offer images" large />
-        <BodyContent post={post} />
-        <ContactAction website={website} phone={phone} email={email} />
+    <section className="mx-auto max-w-[var(--editable-container)] px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
+      <BackLink task="classified" />
+      <div className="mt-8 overflow-hidden rounded-[2.7rem] border border-[var(--editable-border)] bg-white shadow-[0_30px_90px_rgba(15,23,42,0.08)]">
+        {heroImage ? (
+          <div className="relative">
+            <img src={heroImage} alt="" className="h-[320px] w-full object-cover sm:h-[420px] lg:h-[520px]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[var(--detail-text)]/80 via-[var(--detail-text)]/20 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 p-6 text-[var(--detail-bg)] sm:p-10">
+              <p className="text-xs font-black uppercase tracking-[0.28em] opacity-80">Classified notice</p>
+              <h1 className="mt-3 max-w-4xl text-3xl font-black leading-[0.98] tracking-[-0.06em] sm:text-5xl lg:text-6xl">{post.title}</h1>
+            </div>
+          </div>
+        ) : (
+          <div className="bg-[var(--detail-text)] p-6 text-[var(--detail-bg)] sm:p-10">
+            <p className="text-xs font-black uppercase tracking-[0.28em] opacity-70">Classified notice</p>
+            <h1 className="mt-3 text-4xl font-black leading-[0.98] tracking-[-0.07em] sm:text-5xl lg:text-6xl">{post.title}</h1>
+          </div>
+        )}
+      </div>
+
+      <div className="mt-8 grid gap-7 lg:grid-cols-[1.35fr_0.65fr]">
+        <article className="rounded-[2.5rem] border border-[var(--editable-border)] bg-white p-6 shadow-sm sm:p-9">
+          <BodyContent post={post} />
+          <ImageStrip images={galleryImages} label="Offer images" large />
+        </article>
+
+        <aside className="space-y-5 lg:sticky lg:top-24 lg:self-start">
+          <div className="rounded-[2.2rem] border border-[var(--editable-border)] bg-[var(--detail-text)] p-6 text-[var(--detail-bg)] shadow-xl">
+            <p className="text-xs font-black uppercase tracking-[0.28em] opacity-60">Offer details</p>
+            <div className="mt-5 grid gap-3">
+              {price ? <BadgeLine label="Price" value={price} /> : null}
+              {condition ? <BadgeLine label="Condition" value={condition} /> : null}
+              {location ? <BadgeLine label="Location" value={location} /> : null}
+              {!price && !condition && !location ? <p className="text-sm opacity-70">Contact the seller for full details.</p> : null}
+            </div>
+            <div className="mt-6 flex flex-wrap gap-3">
+              {phone ? <a href={`tel:${phone}`} className="inline-flex items-center gap-2 rounded-full bg-[var(--detail-bg)] px-5 py-3 text-sm font-black text-[var(--detail-text)]"><Phone className="h-4 w-4" /> Call now</a> : null}
+              {email ? <a href={`mailto:${email}`} className="inline-flex items-center gap-2 rounded-full border border-white/25 px-5 py-3 text-sm font-black"><Mail className="h-4 w-4" /> Email</a> : null}
+            </div>
+          </div>
+          <ContactAction website={website} phone={phone} email={email} />
+        </aside>
+      </div>
+
+      <div className="mt-10">
         <RelatedPanel task="classified" post={post} related={related} />
-      </article>
+      </div>
     </section>
   )
 }
@@ -430,14 +458,19 @@ function RelatedPanel({ task, post, related, compact = false }: { task: TaskKey;
   )
 }
 
+function stripHtml(value: string) {
+  return decodeHtmlEntities(value.replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim()
+}
+
 function RelatedCard({ task, post }: { task: TaskKey; post: SitePost }) {
   const image = getImages(post)[0]
+  const summary = stripHtml(summaryText(post))
   return (
     <Link href={buildPostUrl(task, post.slug)} className="group flex gap-3 rounded-2xl border border-[var(--editable-border)] bg-white p-3 transition hover:-translate-y-0.5 hover:shadow-lg">
       {image && task !== 'sbm' ? <img src={image} alt="" className="h-20 w-20 shrink-0 rounded-xl object-cover" /> : <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-xl bg-[var(--detail-bg)]"><FileText className="h-6 w-6 opacity-45" /></div>}
       <div className="min-w-0">
         <h3 className="line-clamp-3 text-sm font-black leading-tight tracking-[-0.03em]">{post.title}</h3>
-        <p className="mt-2 line-clamp-2 text-xs leading-5 opacity-60">{summaryText(post)}</p>
+        <p className="mt-2 line-clamp-2 text-xs leading-5 opacity-60">{summary}</p>
       </div>
     </Link>
   )
