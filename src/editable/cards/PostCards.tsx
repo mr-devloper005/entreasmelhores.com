@@ -82,7 +82,7 @@ export function ArticleListCard({ post, href, index }: { post: SitePost; href: s
       <article className="min-w-0">
         <p className="editable-kicker">Story {String(index + 1).padStart(2, '0')}</p>
         <h2 className="editable-title-link mt-2 line-clamp-2 text-lg font-black leading-tight">{post.title}</h2>
-        <p className="mt-2 line-clamp-2 text-sm leading-6 text-[#5c4a68]">{getEditableExcerpt(post, 125)}</p>
+        <p className="mt-2 line-clamp-2 text-sm leading-6 text-[#4c355a]">{getEditableExcerpt(post, 125)}</p>
         <span className="mt-2 inline-flex items-center gap-1 text-xs font-black text-[#7825c7]">Read more <ArrowRight className="h-3.5 w-3.5" /></span>
       </article>
     </Link>

@@ -7,40 +7,13 @@ import { getProductKind } from '@/design/factory/get-product-kind'
 import { EditableContactLeadForm } from '@/editable/components/EditableContactLeadForm'
 import { EditableSiteShell } from '@/editable/shell/EditableSiteShell'
 
-function getTone(kind: ReturnType<typeof getProductKind>) {
-  if (kind === 'directory') {
-    return {
-      shell: 'bg-[#f8fbff] text-slate-950',
-      panel: 'border border-slate-200 bg-white',
-      soft: 'border border-slate-200 bg-slate-50',
-      muted: 'text-slate-600',
-      action: 'bg-slate-950 text-white hover:bg-slate-800',
-    }
-  }
-  if (kind === 'editorial') {
-    return {
-      shell: 'bg-[#fbf6ee] text-[#241711]',
-      panel: 'border border-[#dcc8b7] bg-[#fffdfa]',
-      soft: 'border border-[#e6d6c8] bg-[#fff4e8]',
-      muted: 'text-[#6e5547]',
-      action: 'bg-[#241711] text-[#fff1e2] hover:bg-[#3a241b]',
-    }
-  }
-  if (kind === 'visual') {
-    return {
-      shell: 'bg-[#07101f] text-white',
-      panel: 'border border-white/10 bg-white/6',
-      soft: 'border border-white/10 bg-white/5',
-      muted: 'text-slate-300',
-      action: 'bg-[#8df0c8] text-[#07111f] hover:bg-[#77dfb8]',
-    }
-  }
+function getTone(_kind: ReturnType<typeof getProductKind>) {
   return {
-    shell: 'bg-[#f7f1ea] text-[#261811]',
-    panel: 'border border-[#ddcdbd] bg-[#fffaf4]',
-    soft: 'border border-[#e8dbce] bg-[#f3e8db]',
-    muted: 'text-[#71574a]',
-    action: 'bg-[#5b2b3b] text-[#fff0f5] hover:bg-[#74364b]',
+    shell: 'bg-white text-[#160022]',
+    panel: 'border border-[#7825c7] bg-white',
+    soft: 'border border-[#7825c7]/20 bg-[#f1e7ff]',
+    muted: 'text-[#4c355a]',
+    action: 'bg-[#340055] text-[#f7f3ff] hover:bg-[#7825c7]',
   }
 }
 
@@ -79,10 +52,10 @@ export default function ContactPage() {
       <main className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <section className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#6f2dbd]">{pagesContent.contact.eyebrow}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#7b22c8]">{pagesContent.contact.eyebrow}</p>
             <h1 className="mt-4 text-5xl font-semibold tracking-[-0.05em]">{pagesContent.contact.title}</h1>
             <p className={`mt-5 max-w-2xl text-sm leading-8 ${tone.muted}`}>{pagesContent.contact.description}</p>
-            <div className="mt-7 h-2 w-full max-w-2xl bg-[linear-gradient(90deg,#443199,#792ca2,#c13383)]" />
+            <div className="mt-7 h-2 w-full max-w-2xl bg-[linear-gradient(90deg,#340055,#7825c7,#7b22c8)]" />
             <div className="mt-8 space-y-4">
               {lanes.map((lane) => (
                 <div key={lane.title} className={`rounded-[1.6rem] p-5 ${tone.soft}`}>

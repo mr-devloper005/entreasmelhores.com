@@ -162,7 +162,7 @@ function ArticleDetail({ post, related, comments }: { post: SitePost; related: S
   const images = getImages(post)
   return (
     <section className="mx-auto grid max-w-[var(--editable-container)] gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[minmax(0,1fr)_350px] lg:px-8 lg:py-16">
-      <article className="min-w-0 rounded-[2.7rem] border border-[var(--editable-border)] bg-[var(--detail-surface)] p-5 shadow-[0_30px_90px_rgba(15,23,42,0.09)] sm:p-8 lg:p-12">
+      <article className="min-w-0 rounded-[2.7rem] border border-[var(--editable-border)] bg-[var(--detail-surface)] p-5 shadow-[0_30px_90px_rgba(43,24,77,0.09)] sm:p-8 lg:p-12">
         <BackLink task="article" />
         <p className="mt-8 text-xs font-black uppercase tracking-[0.28em] text-[var(--detail-accent)]">{categoryOf(post, 'Article')}</p>
         <h1 className="mt-4 text-4xl font-black leading-[0.98] tracking-[-0.07em] sm:text-5xl lg:text-7xl">{post.title}</h1>
@@ -187,7 +187,7 @@ function ListingDetail({ post, related }: { post: SitePost; related: SitePost[] 
     <section className="mx-auto max-w-[var(--editable-container)] px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
       <BackLink task="listing" />
       <div className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,1fr)_420px]">
-        <article className="rounded-[2.8rem] border border-[var(--editable-border)] bg-white p-6 shadow-[0_30px_90px_rgba(15,23,42,0.09)] sm:p-9">
+        <article className="rounded-[2.8rem] border border-[var(--editable-border)] bg-white p-6 shadow-[0_30px_90px_rgba(43,24,77,0.09)] sm:p-9">
           <div className="grid gap-6 sm:grid-cols-[150px_1fr]">
             <div className="flex h-36 w-36 items-center justify-center overflow-hidden rounded-[2rem] bg-[var(--detail-bg)] ring-1 ring-[var(--editable-border)]">
               {logo ? <img src={logo} alt="" className="h-full w-full object-cover" /> : <Building2 className="h-14 w-14 opacity-40" />}
@@ -225,7 +225,7 @@ function ClassifiedDetail({ post, related }: { post: SitePost; related: SitePost
   return (
     <section className="mx-auto max-w-[var(--editable-container)] px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
       <BackLink task="classified" />
-      <div className="mt-8 overflow-hidden rounded-[2.7rem] border border-[var(--editable-border)] bg-white shadow-[0_30px_90px_rgba(15,23,42,0.08)]">
+      <div className="mt-8 overflow-hidden rounded-[2.7rem] border border-[var(--editable-border)] bg-white shadow-[0_30px_90px_rgba(43,24,77,0.08)]">
         {heroImage ? (
           <div className="relative">
             <img src={heroImage} alt="" className="h-[320px] w-full object-cover sm:h-[420px] lg:h-[520px]" />
@@ -304,7 +304,7 @@ function BookmarkDetail({ post, related }: { post: SitePost; related: SitePost[]
   const website = getField(post, ['website', 'url', 'link'])
   return (
     <section className="mx-auto grid max-w-[var(--editable-container)] gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[minmax(0,1fr)_360px] lg:px-8 lg:py-16">
-      <article className="rounded-[2.7rem] border border-[var(--editable-border)] bg-white p-7 shadow-[0_30px_90px_rgba(15,23,42,0.08)] sm:p-10">
+      <article className="rounded-[2.7rem] border border-[var(--editable-border)] bg-white p-7 shadow-[0_30px_90px_rgba(43,24,77,0.08)] sm:p-10">
         <BackLink task="sbm" />
         <div className="mt-10 flex h-20 w-20 items-center justify-center rounded-[2rem] bg-[var(--detail-text)] text-[var(--detail-bg)]"><Bookmark className="h-9 w-9" /></div>
         <h1 className="mt-7 text-4xl font-black leading-[0.98] tracking-[-0.07em] sm:text-6xl">{post.title}</h1>
@@ -321,7 +321,7 @@ function PdfDetail({ post, related }: { post: SitePost; related: SitePost[] }) {
   const fileUrl = getField(post, ['fileUrl', 'pdfUrl', 'documentUrl', 'url'])
   return (
     <section className="mx-auto grid max-w-[var(--editable-container)] gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[minmax(0,1fr)_360px] lg:px-8 lg:py-16">
-      <article className="rounded-[2.7rem] border border-[var(--editable-border)] bg-white p-6 shadow-[0_30px_90px_rgba(15,23,42,0.08)] sm:p-9">
+      <article className="rounded-[2.7rem] border border-[var(--editable-border)] bg-white p-6 shadow-[0_30px_90px_rgba(43,24,77,0.08)] sm:p-9">
         <BackLink task="pdf" />
         <div className="mt-8 grid gap-6 sm:grid-cols-[120px_1fr]">
           <div className="flex h-28 w-28 items-center justify-center rounded-[1.8rem] bg-[var(--detail-text)] text-[var(--detail-bg)]"><FileText className="h-12 w-12" /></div>
@@ -353,7 +353,7 @@ function ProfileDetail({ post, related }: { post: SitePost; related: SitePost[] 
   const email = getField(post, ['email'])
   return (
     <section className="mx-auto grid max-w-[var(--editable-container)] gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[420px_minmax(0,1fr)] lg:px-8 lg:py-16">
-      <aside className="rounded-[2.7rem] border border-[var(--editable-border)] bg-white p-8 text-center shadow-[0_30px_90px_rgba(15,23,42,0.08)] lg:sticky lg:top-24 lg:self-start">
+      <aside className="rounded-[2.7rem] border border-[var(--editable-border)] bg-white p-8 text-center shadow-[0_30px_90px_rgba(43,24,77,0.08)] lg:sticky lg:top-24 lg:self-start">
         <BackLink task="profile" />
         <div className="mx-auto mt-10 flex h-40 w-40 items-center justify-center overflow-hidden rounded-full bg-[var(--detail-bg)] ring-1 ring-[var(--editable-border)]">
           {images[0] ? <img src={images[0]} alt="" className="h-full w-full object-cover" /> : <UserRound className="h-16 w-16 opacity-45" />}

@@ -14,7 +14,7 @@ export const visualPresets = {
     colors: {
       background: '#ffffff',
       foreground: '#160022',
-      muted: '#5c4a68',
+      muted: '#4c355a',
       primary: '#340055',
       accent: '#7825c7',
       surface: '#ffffff',
@@ -28,7 +28,7 @@ export const visualPresets = {
     colors: {
       background: '#ffffff',
       foreground: '#160022',
-      muted: '#5c4a68',
+      muted: '#4c355a',
       primary: '#340055',
       accent: '#7825c7',
       surface: '#ffffff',
@@ -42,7 +42,7 @@ export const visualPresets = {
     colors: {
       background: '#ffffff',
       foreground: '#160022',
-      muted: '#5c4a68',
+      muted: '#4c355a',
       primary: '#340055',
       accent: '#7825c7',
       surface: '#ffffff',
@@ -55,10 +55,10 @@ export const visualPresets = {
     fontDirection: 'condensed headline + mono metadata',
     colors: {
       background: '#120b1f',
-      foreground: '#f7f1ff',
+      foreground: '#f7f3ff',
       muted: '#b9a4d1',
-      primary: '#792ca2',
-      accent: '#e05454',
+      primary: '#7825c7',
+      accent: '#7825c7',
       surface: '#201431',
     },
     shape: 'glassmorphism and cinematic cards',
@@ -89,7 +89,7 @@ export const visualSystem = {
   },
   surfaces: {
     glass: 'border border-white/15 bg-white/10 backdrop-blur-xl',
-    paper: 'border border-black/10 bg-white shadow-[0_18px_54px_rgba(59,35,92,0.12)]',
+    paper: 'border border-black/10 bg-white shadow-[0_18px_54px_rgba(43,24,77,0.12)]',
     quiet: 'border border-black/8 bg-black/[0.03]',
     dark: 'border border-white/10 bg-black/30 shadow-[0_24px_70px_rgba(0,0,0,0.28)]',
   },

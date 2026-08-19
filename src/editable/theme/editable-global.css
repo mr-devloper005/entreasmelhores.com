@@ -276,7 +276,7 @@ body:has(main form input[type="password"]) main > section:has(form) h2 {
 
 body:has(main form input[type="password"]) main form input {
   background: #ffffff !important;
-  border: 1px solid #c9a9e5 !important;
+  border: 1px solid #7825c7 !important;
   border-radius: 0 !important;
   color: var(--slot4-page-text) !important;
   height: 3rem;
@@ -304,7 +304,7 @@ body:has(main form input[type="password"]) main form button:hover {
 }
 
 body:has(main form input[type="password"]) main > section:has(form) > p:last-child {
-  border-top: 1px solid #e7d8f5;
+  border-top: 1px solid #f1e7ff;
   color: var(--slot4-muted-text) !important;
   margin-top: 1.5rem;
   padding-top: 1.25rem;
