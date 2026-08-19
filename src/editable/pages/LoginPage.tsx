@@ -31,7 +31,7 @@ export default function LoginPage() {
                 <p className="text-sm font-black text-[#7825c7]">Account access</p>
                 <h2 className="mt-3 text-3xl font-black tracking-[-0.03em]">{pagesContent.auth.login.formTitle}</h2>
                 <EditableLocalLoginForm />
-                <p className="mt-6 border-t border-[#e7d8f5] pt-5 text-sm text-[var(--slot4-muted-text)]">
+                <p className="mt-6 border-t border-[#f1e7ff] pt-5 text-sm text-[var(--slot4-muted-text)]">
                   New here?{' '}
                   <Link href="/signup" className="font-black text-[#7825c7] underline-offset-4 hover:underline">
                     {pagesContent.auth.login.createCta}
