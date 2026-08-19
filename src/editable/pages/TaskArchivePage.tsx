@@ -68,15 +68,15 @@ export function TaskArchiveView({ task, posts, pagination, category, basePath }:
         <section className="mx-auto max-w-[1440px] px-4 pb-8 pt-20 sm:px-6 lg:px-8">
           <h1 className="editable-section-heading">{voice?.headline || `${label} Picks`}</h1>
           <div className="mt-5 grid gap-5 lg:grid-cols-[1fr_320px] lg:items-end">
-            <p className="max-w-3xl text-base font-semibold leading-8 text-[#5c4a68]">{voice?.description || SITE_CONFIG.description}</p>
+            <p className="max-w-3xl text-base font-semibold leading-8 text-[#4c355a]">{voice?.description || SITE_CONFIG.description}</p>
             <form action={basePath} className="grid gap-2 border border-[#7825c7] p-3">
               <div className="flex items-center gap-2 text-xs font-black text-[#7825c7]"><Filter className="h-4 w-4" /> Filter stories</div>
-              <select name="category" defaultValue={category} className="h-11 border border-[#e4d7ef] bg-white px-3 text-sm font-bold outline-none">
+              <select name="category" defaultValue={category} className="h-11 border border-[#f1e7ff] bg-white px-3 text-sm font-bold outline-none">
                 <option value="all">All categories</option>
                 {CATEGORY_OPTIONS.map((item) => <option key={item.slug} value={item.slug}>{item.name}</option>)}
               </select>
               <button className="h-11 bg-[#7825c7] text-sm font-black text-white">Apply</button>
-              <p className="text-xs font-bold text-[#5c4a68]">Showing: {categoryLabel}</p>
+              <p className="text-xs font-bold text-[#4c355a]">Showing: {categoryLabel}</p>
             </form>
           </div>
         </section>
@@ -96,7 +96,7 @@ export function TaskArchiveView({ task, posts, pagination, category, basePath }:
             <div className="border border-dashed border-[#7825c7] p-10 text-center">
               <Search className="mx-auto h-8 w-8 text-[#7825c7]" />
               <h2 className="mt-4 text-3xl font-black">No posts found</h2>
-              <p className="mt-2 text-sm text-[#5c4a68]">Try another category or check back after new posts are published.</p>
+              <p className="mt-2 text-sm text-[#4c355a]">Try another category or check back after new posts are published.</p>
             </div>
           )}
 
@@ -134,7 +134,7 @@ function ArchiveLead({ task, post, basePath }: { task: TaskKey; post?: SitePost;
       <article className="flex min-w-0 flex-col justify-center border-y border-[#7825c7] py-6">
         <p className="editable-kicker"><TaskGlyph task={task} /> {price || getEditableCategory(post)}</p>
         <h2 className="editable-title-link mt-4 text-3xl font-black leading-tight sm:text-4xl">{post.title}</h2>
-        <p className="mt-4 line-clamp-4 text-base font-semibold leading-8 text-[#5c4a68]">{getEditableExcerpt(post, 220)}</p>
+        <p className="mt-4 line-clamp-4 text-base font-semibold leading-8 text-[#4c355a]">{getEditableExcerpt(post, 220)}</p>
         {location ? <p className="mt-5 inline-flex items-center gap-2 text-sm font-black text-[#7825c7]"><MapPin className="h-4 w-4" /> {location}</p> : null}
       </article>
     </Link>
@@ -158,7 +158,7 @@ function ListArchiveCard({ task, post, basePath, index }: { task: TaskKey; post:
       <article className="min-w-0">
         <p className="editable-kicker"><TaskGlyph task={task} /> {index + 1}</p>
         <h3 className="editable-title-link mt-2 line-clamp-2 text-base font-black leading-tight">{post.title}</h3>
-        <p className="mt-2 line-clamp-2 text-sm leading-6 text-[#5c4a68]">{getEditableExcerpt(post, 115)}</p>
+        <p className="mt-2 line-clamp-2 text-sm leading-6 text-[#4c355a]">{getEditableExcerpt(post, 115)}</p>
       </article>
     </Link>
   )

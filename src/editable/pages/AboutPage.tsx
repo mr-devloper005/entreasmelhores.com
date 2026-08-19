@@ -5,13 +5,13 @@ import { EditableSiteShell } from '@/editable/shell/EditableSiteShell'
 export default function AboutPage() {
   return (
     <EditableSiteShell>
-      <main className="bg-[var(--editable-page-bg,#fffaf3)] px-4 py-14 text-[var(--editable-page-text,#241915)] sm:px-6 lg:px-8">
+      <main className="bg-[var(--editable-page-bg,#ffffff)] px-4 py-14 text-[var(--editable-page-text,#160022)] sm:px-6 lg:px-8">
         <section className="mx-auto grid max-w-[var(--editable-container)] gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <article className="rounded-[2.5rem] border border-[var(--editable-border)] bg-white/80 p-8 shadow-sm lg:p-12">
-            <p className="text-xs font-black uppercase tracking-[0.24em] text-[#6f2dbd]">{pagesContent.about.badge}</p>
+            <p className="text-xs font-black uppercase tracking-[0.24em] text-[#7b22c8]">{pagesContent.about.badge}</p>
             <h1 className="mt-5 text-5xl font-black tracking-[-0.07em]">About {globalContent.site.name}</h1>
             <p className="mt-5 max-w-2xl text-base leading-8 opacity-70">{pagesContent.about.description}</p>
-            <div className="mt-8 h-2 w-full bg-[linear-gradient(90deg,#443199,#792ca2,#c13383)]" />
+            <div className="mt-8 h-2 w-full bg-[linear-gradient(90deg,#340055,#7825c7,#7b22c8)]" />
             <div className="mt-8 space-y-4 text-sm leading-8 opacity-75">
               {pagesContent.about.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </div>

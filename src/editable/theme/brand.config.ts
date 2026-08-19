@@ -16,12 +16,12 @@ export const slot4BrandConfig = {
   ogImage: siteIdentity.ogImage,
   accents:
     productKind === 'visual'
-      ? { primary: '#8df0c8', surface: '#07101f' }
+      ? { primary: '#7825c7', surface: '#340055' }
       : productKind === 'editorial'
-        ? { primary: '#241711', surface: '#fbf6ee' }
+        ? { primary: '#7825c7', surface: '#ffffff' }
         : productKind === 'directory'
-          ? { primary: '#0f172a', surface: '#f8fbff' }
-          : { primary: '#5b2b3b', surface: '#f7f1ea' },
+          ? { primary: '#7825c7', surface: '#ffffff' }
+          : { primary: '#7825c7', surface: '#ffffff' },
 } as const
 
 // redesigned-ui-2026-05-28

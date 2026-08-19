@@ -98,7 +98,7 @@ export function EditableHomeHero({ primaryTask, primaryRoute, posts }: HomeSecti
         <SectionTitle>Top Stories</SectionTitle>
         <div className="mt-8 border border-dashed border-[#7825c7] p-10 text-center">
           <h1 className="text-3xl font-black text-[#160022]">Fresh listings are on the way</h1>
-          <p className="mt-3 text-[#5c4a68]">Check back soon for offers, services, and useful local pages.</p>
+          <p className="mt-3 text-[#4c355a]">Check back soon for offers, services, and useful local pages.</p>
         </div>
       </section>
     )
@@ -166,7 +166,7 @@ export function EditableHomeCta() {
           <input name="q" placeholder="Search listings, services, and posts" className="min-w-0 flex-1 px-4 py-3 text-sm outline-none" />
           <button className="inline-flex items-center gap-2 bg-[#7825c7] px-5 py-3 text-sm font-black text-white"><Search className="h-4 w-4" /> Search</button>
         </form>
-        <p className="mt-5 text-center text-sm font-semibold text-[#5c4a68]">{SITE_CONFIG.name} helps readers scan offers, local pages, and useful services quickly.</p>
+        <p className="mt-5 text-center text-sm font-semibold text-[#4c355a]">{SITE_CONFIG.name} helps readers scan offers, local pages, and useful services quickly.</p>
       </div>
     </section>
   )
